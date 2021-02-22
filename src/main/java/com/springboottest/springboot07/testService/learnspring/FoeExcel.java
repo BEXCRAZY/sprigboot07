@@ -85,7 +85,9 @@ public class FoeExcel {
 
         File f = new File("F:\\BCODE\\b.xlsx");
 
-        String s = new ExcelUtils<User>().writeValue(users, f, new User());
+        //String s = new ExcelUtils<User>().writeValue(users, f, new User());
+
+        String s = ExcelUtils.writeValue(users, f, new User());
 
         return s;
 
@@ -94,7 +96,9 @@ public class FoeExcel {
     @PostMapping("/ok")
     public String read(@RequestParam("file") MultipartFile file) {
 
-        List<User> users = new ExcelUtils<User>().readValue(file, new User(), 2, 1);
+        //List<User> users = new ExcelUtils<User>().readValue(file, new User(), 2, 1);
+
+        List<User> users = ExcelUtils.readValue(file, new User(), 2, 1);
 
         users.stream().forEach(System.out::println);
 

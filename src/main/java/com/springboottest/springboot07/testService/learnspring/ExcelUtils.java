@@ -70,7 +70,7 @@ public class ExcelUtils<T> {
      * @param <T>
      * @return
      */
-    public  <T> List<T> readValue(MultipartFile file, T target, Integer bathNum, Integer headRowNumber) {
+    public static  <T> List<T> readValue(MultipartFile file, T target, Integer bathNum, Integer headRowNumber) {
 
         ArrayList<T> resultList = new ArrayList<>();
 
@@ -97,7 +97,7 @@ public class ExcelUtils<T> {
      * @param target model类型
      * @return
      */
-    public  String writeValue(List<T> list, File file,T target) {
+    public static <T> String writeValue(List<T> list, File file,T target) {
 
         HashMap<String, Object> result = new HashMap<>();
         result.put("code", "0");
